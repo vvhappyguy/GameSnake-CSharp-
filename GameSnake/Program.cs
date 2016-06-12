@@ -10,7 +10,7 @@ namespace GameSnake
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello Wordl!!!");
+            Console.WriteLine("Hello World!!!");
             Console.ReadLine();
         }
     }
