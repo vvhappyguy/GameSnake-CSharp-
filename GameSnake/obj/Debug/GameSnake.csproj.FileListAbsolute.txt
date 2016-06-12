@@ -1,7 +1,0 @@
-C:\Users\Iowan\Documents\C#\Study\GameSnake\GameSnake\bin\Debug\GameSnake.exe.config
-C:\Data\GitReps\GameSnake-CSharp-\GameSnake\bin\Debug\GameSnake.exe.config
-C:\Data\GitReps\GameSnake-CSharp-\GameSnake\bin\Debug\GameSnake.exe
-C:\Data\GitReps\GameSnake-CSharp-\GameSnake\bin\Debug\GameSnake.pdb
-C:\Data\GitReps\GameSnake-CSharp-\GameSnake\obj\Debug\GameSnake.csprojResolveAssemblyReference.cache
-C:\Data\GitReps\GameSnake-CSharp-\GameSnake\obj\Debug\GameSnake.exe
-C:\Data\GitReps\GameSnake-CSharp-\GameSnake\obj\Debug\GameSnake.pdb
