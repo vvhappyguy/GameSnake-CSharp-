@@ -10,10 +10,10 @@ namespace GameSnake
     {
         static void Main(string[] args)
         {
-            point p1 = new point();
-            p1.x = 1;
+            point p1 = new point(1, 3, '*');
+            /*p1.x = 1;
             p1.y = 2;
-            p1.sym = '*';
+            p1.sym = '*';*/
             p1.Draw();
 
             /*int x1 = 1;
