@@ -10,17 +10,20 @@ namespace GameSnake
     {
         static void Main(string[] args)
         {
-            point p1 = new point(1, 3, '*');
+            Console.SetBufferSize(80, 25);
+
+            HorizontalLine lineTop = new HorizontalLine(0, 78, 0, '+');
+            HorizontalLine lineBot = new HorizontalLine(0, 78, 24, '+');
+            VerticalLine lineRight = new VerticalLine(0, 24, 0, '+');
+            VerticalLine lineLeft = new VerticalLine(0, 24, 78, '+');
+
+            lineBot.Draw();
+            lineLeft.Draw();
+            lineRight.Draw();
+            lineTop.Draw();
+
+            point p1 = new point(1, 3, '#');
             p1.Draw();
-
-            point p2 = new point(4, 5, '#');
-            p2.Draw();
-
-            HorizontalLine line = new HorizontalLine(5, 10, 7,'+');
-            line.Draw();
-
-            VerticalLine line1 = new VerticalLine(3, 7, 4, '-');
-            line1.Draw();
 
             Console.ReadLine();
         }

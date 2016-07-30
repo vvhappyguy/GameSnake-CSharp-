@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace GameSnake
 {
-    class VerticalLine
+    class VerticalLine : Figure
     {
-        List<point> plist;
-
         public VerticalLine(int yTop, int yBot, int x, char sym)
         {
            plist = new List<point>();
@@ -17,14 +15,6 @@ namespace GameSnake
             {
                 point p = new point(x, y, sym);
                 plist.Add(p);
-            }
-        }
-
-        public void Draw()
-        {
-            foreach(point p in plist)
-            {
-                p.Draw();
             }
         }
     }
