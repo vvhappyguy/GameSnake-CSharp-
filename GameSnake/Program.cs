@@ -13,15 +13,27 @@ namespace GameSnake
         {
             Console.SetBufferSize(80, 25);
 
-            HorizontalLine lineTop = new HorizontalLine(0, 78, 0, '+');
-            HorizontalLine lineBot = new HorizontalLine(0, 78, 24, '+');
-            VerticalLine lineRight = new VerticalLine(0, 24, 0, '+');
-            VerticalLine lineLeft = new VerticalLine(0, 24, 78, '+');
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.SetCursorPosition(18, 5);
+            Console.WriteLine("==============================================");
+            Console.SetCursorPosition(25, 7);
+            Console.WriteLine("Press Any Key to Start!!!");
+            Console.ResetColor();
 
-            lineBot.Draw();
-            lineLeft.Draw();
-            lineRight.Draw();
-            lineTop.Draw();
+            while (true)
+            {
+                if (Console.KeyAvailable)
+                {
+                    Console.SetCursorPosition(18, 5);
+                    Console.WriteLine("                                                        ");
+                    Console.SetCursorPosition(25, 7);
+                    Console.WriteLine("                                        ");
+                    break;
+                }
+            }
+
+            Walls walls = new Walls(80, 25);
+            walls.Draw();
 
             point p = new point(4, 5, '*');
             Snake snake = new Snake(p, 4, Direction.RIGHT);
@@ -33,6 +45,25 @@ namespace GameSnake
 
             while (true)
             {
+                if (walls.IsHit(snake) || snake.IsHitTail())
+                {
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.SetCursorPosition(18, 5);
+                    Console.WriteLine("=======================================");
+                    Console.SetCursorPosition(30, 7);
+                    Console.WriteLine("Game Over!!!");
+                    Console.SetCursorPosition(18, 10);
+                    Console.WriteLine("=======================================");
+                    Console.SetCursorPosition(28, 12);
+                    Console.WriteLine("Game by Ivan Dyakin");
+                    Console.SetCursorPosition(18, 15);
+                    Console.WriteLine("=======================================");
+                    Console.SetCursorPosition(25, 17);
+                    Console.WriteLine("Press Enter to Close Window!");
+                    break;
+                    Console.ReadLine();
+                }
+
                 if (snake.Eat(food))
                 {
                     food = foodCreator.CreateFood();
@@ -50,7 +81,6 @@ namespace GameSnake
                     snake.HandleKey(key.Key);                    
                 }
             }
-
 
             Console.ReadLine();
         }
