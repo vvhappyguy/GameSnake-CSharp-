@@ -60,5 +60,19 @@ namespace GameSnake
                 direction = Direction.UP;
             }
         }
+
+        internal bool Eat(point food)
+        {
+            point head = GetNextPoint();
+            if (head.IsHit(food))
+            {
+                food.sym = head.sym;
+                plist.Add(food);
+                return true;
+            } else
+            {
+                return false;
+            }
+        }
     }
 }
